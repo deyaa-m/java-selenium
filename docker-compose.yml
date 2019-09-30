@@ -1,0 +1,51 @@
+version : "3"
+services : 
+        java : 
+                container_name : java
+                build : ./java
+                ports : 
+                        - "8082:8080"
+        sel : 
+                container_name : selenium-hub
+                image : selenium/hub
+                ports : 
+                        - "4444:4444"
+                depends_on : 
+                        - java
+        chrome : 
+                container_name : chrome
+                image : selenium/node-chrome-debug
+                depends_on : 
+                        - sel
+                environment :
+                        - HUB_PORT_4444_TCP_ADDR=selenium-hub
+                        - HUB_PORT_4444_TCP_PORT=4444
+                volumes : 
+                        - /dev/shm/:/dev/shm
+                ports : 
+                        - "5900:5900"
+
+        firefox : 
+                container_name : firefox
+                image : selenium/node-firefox-debug
+                depends_on : 
+                        - sel
+                environment : 
+                        - HUB_PORT_4444_TCP_ADDR=selenium-hub
+                        - HUB_PORT_4444_TCP_PORT=4444
+                volumes : 
+                        - /dev/shm:/dev/shm
+                ports : 
+                        - "5901:5900"
+        test : 
+                container_name : test
+                build : ./node
+                # command : npm install -g selenium-side-runner
+                volumes : 
+                        - ./test:/test:ro
+                        - ./report:/report:rw
+                depends_on : 
+                        - java 
+
+                working_dir : /test
+                command : selenium-side-runner test.side --server http://sel:4444/wd/hub -c "browserName='chrome'" --output-directory=/report --output-format=junit

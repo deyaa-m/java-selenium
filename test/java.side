@@ -1,0 +1,101 @@
+{
+  "id": "d3dadcb2-f30f-4a18-a6fb-8917422fe8e4",
+  "version": "2.0",
+  "name": "java",
+  "url": "http://3.19.246.196:8080",
+  "tests": [{
+    "id": "1384cace-07ba-46f4-aa47-5b0ed4bb2b5e",
+    "name": "test1",
+    "commands": [{
+      "id": "a9860ab4-204c-4ffa-afb2-5be748571343",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdbd2369-ef6e-4481-abf5-d00f6c4d4619",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1299x741",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d45066e-b157-426e-844c-926fbac11c2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"],
+        ["xpath=//html[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "517ecd25-1b7d-400b-b592-6b9ad603e89f",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "43e3c9b4-63a6-429b-a416-d51711135c4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41fe3af7-6f39-4369-8f50-bee6154c3457",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a062c0c-d27d-465d-b74f-14a2b620411a",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc063d17-251e-4884-a6b4-802b8bbabf7c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'WELCOME to devopsarea 1.0 !!')]", "xpath:innerText"]
+      ],
+      "value": "WELCOME to devopsarea 1.0 !!"
+    }]
+  }],
+  "suites": [{
+    "id": "3a6c887f-0bd0-4690-8c74-53b753728fa0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1384cace-07ba-46f4-aa47-5b0ed4bb2b5e"]
+  }],
+  "urls": ["http://3.19.246.196:8080/"],
+  "plugins": []
+}
